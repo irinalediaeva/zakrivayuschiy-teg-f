@@ -36,7 +36,6 @@
 
 .content-block {
   inline-size: var(--content-block-width);
-  background-color: var(--background-color);
   margin: 0 auto;
 }
 
@@ -44,7 +43,7 @@
   font-family: var(--font-accent);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   gap: 25px;
   margin-block-start: 100px;
@@ -52,6 +51,7 @@
   padding-block-start: clamp(120px, 10vw, 136px);
   padding-block-end: 25px;
   border: var(--border-style);
+  background-color: var(--background-color);
 }
 
 .header__logo {
@@ -138,8 +138,10 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   gap: 50px;
+  padding-block-end: 100px;
+  background-color: var(--background-color);
 }
 
 .card {
@@ -243,8 +245,7 @@ button {
   gap: 6px;
 }
 
-.main button,
-.footer button {
+.main button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -322,19 +323,15 @@ button {
   color: var(--accent-color);
 }
 
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-block-start: 50px;
-  padding-block-end: 100px;
-}
-
 .save-button {
   padding: 15px 20px;
 }
 
-#save-dialog[open] {
+.close-button {
+  text-transform: uppercase;
+}
+
+.save-dialog[open] {
   position: fixed;
   inset: 0;
   border: var(--border-style);
@@ -368,7 +365,7 @@ dialog::backdrop {
   flex-shrink: 0;
 }
 
-#save-dialog[open] button {
+.save-dialog[open] button {
   inline-size: 100%;
 }
 
@@ -390,7 +387,7 @@ dialog::backdrop {
     flex-direction: column;
   }
 
-  #save-dialog[open] {
+  .save-dialog[open] {
     max-inline-size: 341px;
   }
 }

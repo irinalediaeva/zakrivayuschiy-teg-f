@@ -16,8 +16,8 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  top: 0;
-  left: -19px;
+  inset-block-start: 0;
+  inset-inline-start: -19px;
   animation: shift 0.5s ease-in-out infinite alternate;
 }
 
@@ -44,17 +44,25 @@
   transition-delay: 0.03s;
 }
 
-.card__icon-button:hover .core,
-.card__icon-button:hover .main-body {
-  fill: var(--accent-color);
+.contour {
+  transition: fill 0.1s linear;
 }
 
-.card__icon-button:hover .core {
+.card__icon-button:hover .core,
+.card__icon-button:active .core,
+.like-icon.is-liked .core {
   transition-delay: 0s;
 }
 
-.card__icon-button:hover .main-body {
+.card__icon-button:hover .main-body,
+.card__icon-button:active .main-body,
+.like-icon.is-liked .main-body {
   transition-delay: 0.05s;
+}
+
+.card__icon-button:hover .core,
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
 }
 
 .card__icon-button:active .main-body,
@@ -66,10 +74,6 @@
 .like-icon.is-liked .main-body,
 .like-icon.is-liked .contour {
   fill: var(--background-icon-color);
-}
-
-.contour {
-  transition: fill 0.1s linear;
 }
 
 .like-icon.is-liked .contour {
