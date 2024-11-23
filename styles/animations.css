@@ -12,3 +12,95 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  top: 0;
+  left: -19px;
+  animation: shift 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes shift {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(4px);
+  }
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.core,
+.main-body {
+  fill: var(--background-color);
+  transition: fill 0.3s linear;
+}
+
+.core {
+  transition-delay: 0.03s;
+}
+
+.card__icon-button:hover .core,
+.card__icon-button:hover .main-body {
+  fill: var(--accent-color);
+}
+
+.card__icon-button:hover .core {
+  transition-delay: 0s;
+}
+
+.card__icon-button:hover .main-body {
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:active .main-body,
+.card__icon-button:active .core {
+  fill: var(--background-icon-color);
+}
+
+.like-icon.is-liked .core,
+.like-icon.is-liked .main-body,
+.like-icon.is-liked .contour {
+  fill: var(--background-icon-color);
+}
+
+.contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .heart {
+  animation: heart-scale 0.3s ease-in 0.1s;
+  transform-origin: center;
+}
+
+@keyframes heart-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.like-icon.is-liked .sparks {
+  animation: spark 0.3s ease-in 0.3s;
+}
+
+@keyframes spark {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}

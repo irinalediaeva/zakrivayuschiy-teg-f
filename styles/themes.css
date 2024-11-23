@@ -4,3 +4,92 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-dark {
+  --font-weight-regular: 465;
+  --font-weight-bold: 785;
+  --accent-color: #00cc14;
+  --secondary-color: rgba(0, 204, 20, 0.5);
+  --tertiary-color: var(--accent-color);
+  --background-color: #000;
+  --overlay-color: #000;
+  --background-icon-color: #ff0000;
+  --text-shadow-color: rgba(0, 0, 0, 0.5);
+  --stripe-1-color: #000;
+  --stripe-2-color: #007f0c;
+  --stripe-3-color: #004306;
+  --background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe-1-color),
+      var(--stripe-1-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--stripe-1-color),
+      var(--stripe-1-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(var(--stripe-2-color), var(--stripe-3-color));
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --font-weight-regular: 465;
+    --font-weight-bold: 785;
+    --accent-color: #00cc14;
+    --secondary-color: rgba(0, 204, 20, 0.5);
+    --tertiary-color: var(--accent-color);
+    --background-color: #000;
+    --overlay-color: #000;
+    --background-icon-color: #ff0000;
+    --text-shadow-color: rgba(0, 0, 0, 0.5);
+    --stripe-1-color: #000;
+    --stripe-2-color: #007f0c;
+    --stripe-3-color: #004306;
+    --background-image: repeating-linear-gradient(
+        to right,
+        var(--stripe-1-color),
+        var(--stripe-1-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      repeating-linear-gradient(
+        var(--stripe-1-color),
+        var(--stripe-1-color) 2px,
+        transparent 2px,
+        transparent 4px
+      ),
+      linear-gradient(var(--stripe-2-color), var(--stripe-3-color));
+  }
+}
+
+:root.theme-light {
+  --font-weight-regular: 400;
+  --font-weight-bold: 700;
+  --accent-color: #000;
+  --secondary-color: rgba(0, 0, 0, 0.5);
+  --tertiary-color: #fff;
+  --background-color: #fff;
+  --overlay-color: #000;
+  --background-icon-color: #ff0000;
+  --text-shadow-color: rgba(255, 255, 255, 0.5);
+  --stripe-1-color: #d3d3d3;
+  --stripe-2-color: #e7e7e7;
+  --stripe-3-color: #1a1a1a;
+  --background-image: repeating-linear-gradient(
+      to right,
+      var(--stripe-1-color),
+      var(--stripe-1-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    repeating-linear-gradient(
+      var(--stripe-1-color),
+      var(--stripe-1-color) 2px,
+      transparent 2px,
+      transparent 4px
+    ),
+    linear-gradient(var(--stripe-2-color) 0.01%, var(--stripe-3-color));
+}
