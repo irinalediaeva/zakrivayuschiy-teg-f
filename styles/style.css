@@ -141,12 +141,12 @@ button {
   align-items: center;
   gap: 50px;
   padding-block-end: 100px;
-  background-color: var(--background-color);
 }
 
 .card {
   inline-size: 100%;
   border: var(--border-style);
+  background-color: var(--background-color);
 }
 
 .card__title {
@@ -254,6 +254,7 @@ button {
   font-size: 14px;
   line-height: 90%;
   color: var(--tertiary-color);
+  background-color: var(--background-color);
 }
 
 .outline-button {
